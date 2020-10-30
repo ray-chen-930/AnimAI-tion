@@ -20,6 +20,19 @@ cd AnimAI-tion
 The weights used for YOLOv5 small and First Order Motion Model can be downloaded from here:
 https://drive.google.com/drive/folders/108Dbrx9URFKkt_07WX4lsrr5fdeqHeCM
 
+Create a folder 'weights' in the directory, and save the weights there
+├── AnimAI-tion
+│   ├── Fomm
+|   ├── yolov5
+|   ├── weights             # save the weights in this folder!
+|   ├── data_train_yolo
+|   ├── demo_save_results.ipynb
+│   └── ...
+
+### Try your own image and video!
+
+Open demo_save_results.ipynb and input a path to your own source image and driving video! Note that the weights used in the model work best on anime style faces and facial animations.
+
 ## Fine-tuning the First Order Motion Model
 
 The First Order Motion Model has already been fine-tuned for facial animations, but only on real faces in the celebs dataset.  As a result, using the weights trained on the celebs data set does not translate well over to faces drawn in an anime style.  To produce better results, the First Order Motion Model must first be fine-tuned, which can be done using clips of anime.  Weights for two separately fine-tuned models can be found in the link above, one trained on a single episode and one trained on 5 episodes.
