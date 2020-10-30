@@ -21,6 +21,7 @@ The weights used for YOLOv5 small and First Order Motion Model can be downloaded
 https://drive.google.com/drive/folders/108Dbrx9URFKkt_07WX4lsrr5fdeqHeCM
 
 Create a folder 'weights' in the directory, and save the weights there
+```
 ├── AnimAI-tion
 │   ├── Fomm
 |   ├── yolov5
@@ -28,6 +29,7 @@ Create a folder 'weights' in the directory, and save the weights there
 |   ├── data_train_yolo
 |   ├── demo_save_results.ipynb
 │   └── ...
+```
 
 ### Try your own image and video!
 
