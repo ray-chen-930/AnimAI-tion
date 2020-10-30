@@ -2,11 +2,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 import cv2
 
-bbox_path = 'data_train_yolo/im_test2.txt'
-im_path = 'data_train_yolo/im_test2.jpg'
+bbox_path = 'data_train_yolo/labels/train/images.txt'
+im_path = 'data_train_yolo/images/train/images.jpeg'
 
-bbox_path = 'data_train_yolo/im_test.txt'
-im_path = 'data_train_yolo/im_test.jpg'
+# bbox_path = 'data_train_yolo/labels/train/im_test.txt'
+# im_path = 'data_train_yolo/images/train/im_test.jpg'
 
 def get_bbox(path):
     # bbox coordinates as (x of center, y of center, width of box, height of box) all in percentage of im
@@ -24,13 +24,13 @@ def get_im(path):
     im = cv2.cvtColor(im, cv2.COLOR_RGB2BGR)
     return im
 
-def draw_bbox(im, bbox_list):
-    im_h = im.shape[1]
-    im_w = im.shape[2]
+def draw_bbox(im, bbox_list, start_idx=1):
+    im_h = im.shape[0]
+    im_w = im.shape[1]
     for b in bbox_list:
-        b_w = int(b[3] * im_w)
-        b_h = int(b[4] * im_h)
-        center = (int(b[0] * im_w), int(b[1] * im_h))
+        b_w = int(b[2 + start_idx] * im_w)
+        b_h = int(b[3 + start_idx] * im_h)
+        center = (int(b[0 + start_idx] * im_w), int(b[1 + start_idx] * im_h))
         top = int(center[1] - b_h/2)
         bot = int(center[1] + b_h / 2)
         left = int(center[0] - b_w / 2)
@@ -38,7 +38,7 @@ def draw_bbox(im, bbox_list):
 
         new_im = cv2.rectangle(im, (left, top),
                                (right, bot),
-                               color=(0, 0, 255), thickness=2)
+                               color=(0, 255, 0), thickness=2)
     return new_im
 
 if __name__ == "__main__":

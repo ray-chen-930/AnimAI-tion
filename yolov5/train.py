@@ -32,8 +32,8 @@ from utils.torch_utils import ModelEMA, select_device, intersect_dicts
 
 logger = logging.getLogger(__name__)
 
+# cmd line run
 # python train.py --img 640 --batch 16 --epochs 200 --data data/kon.yaml --cfg models/yolov5s.yaml --weights weights/yolov5s.pt --name yolov5s_kon
-
 
 
 def train(hyp, opt, device, tb_writer=None):

@@ -1,0 +1,9 @@
+/.vscode
+/.ipynb_checkpoints
+/log
+__pycache__
+/venv
+/data/
+/gen/
+.idea
+/yolov5/weights/yolo*
