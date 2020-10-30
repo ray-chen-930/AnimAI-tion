@@ -7,7 +7,7 @@ import numpy as np
 import warnings
 from os import path
 import sys
-sys.path.append(path.abspath('../first-order-model/yolov5'))
+sys.path.append(path.abspath('../AnimAI-tion/yolov5'))
 
 from scenedetect.platform import tqdm, get_and_create_path
 from scene_detect_utils import find_scenes, get_end_frame_for_each_scene
@@ -20,12 +20,7 @@ warnings.filterwarnings("ignore")
 # example run
 # CUDA_VISIBLE_DEVICES=0 python3 crop-video-testing.py --inp data/kon_(num).mkv --min_frames 60 --out /sizigi/coruscant/pond/data_proc/fom_ray/clips/kon(num) --name kon(num)
 
-weights = 'yolov5/runs/exp1_yolov5s_kon/weights/best.pt'
-
-# return_elements = ["input/input_data:0", "pred_sbbox/concat_2:0", "pred_mbbox/concat_2:0", "pred_lbbox/concat_2:0"]
-# num_classes = 2
-# input_size = 512
-
+weights = 'weights/yolov5_small.pt'
 
 # for a singular frame get all bboxes
 def extract_bbox(frame, fa, model, device, half):

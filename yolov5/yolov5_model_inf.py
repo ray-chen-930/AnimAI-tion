@@ -8,8 +8,6 @@ import models.experimental
 import utils.google_utils
 import models
 
-weights = 'yolov5/runs/exp1_yolov5s_kon/weights/best.pt'
-
 def load_model(weights):
     utils.general.set_logging()
     # device = select_device(opt.device)
@@ -54,4 +52,3 @@ def extract_bbox_from_frame(frame, model, device, half, imgsz=640, to_yield_for_
                     if conf < .75:
                         continue
                     yield [float(x), float(y), float(xm), float(ym), float(conf)]
-
