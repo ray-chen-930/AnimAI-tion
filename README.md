@@ -2,6 +2,11 @@
 
 Creating machine learning-generated animations from Anime with the First Order Motion Model for Image Animation (https://papers.nips.cc/paper/8935-first-order-motion-model-for-image-animation).
 
+## Table of Contents
+  * [Installation](#installation)
+  * [Fine-tuning the First Order Motion Model](#fine-tuning-the-first-order-motion-model)
+  * [Some results](#some-results)
+
 ## Installation
 
 Clone into directory
@@ -27,7 +32,7 @@ Along with yolo predicted bounding boxes, other methods can be used improve the 
 
 The crop-video.py file is similar to crop-vid-yolov5.py but instead uses Yolo version 3 and, unfortunately, the weights for this model are proprietary to Spellbrush.
 
-#### Fine-tuning the Yolo V5 model
+### Fine-tuning the Yolo V5 model
 
 A data set can be downloaded from https://www.kaggle.com/shihkuanchen/kon-characters that contains around 500 images and their respective bounding boxes in text files for faces.  Since these bounding boxes include classes for different characters, clean_kon_bbox_data.py can be run to change the classes in all the text files to a '0' which will represent the presence of a face.  The split_train_val.py file can then be run to randomly split the images and their respective text files into a training and validation set in their respective directories.  These files are in the data_train_yolo folder.
 
